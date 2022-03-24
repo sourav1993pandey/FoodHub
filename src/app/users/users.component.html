@@ -1,0 +1,29 @@
+
+<br><br>
+<h3>Users List</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>user id</th>
+      <th>user Name</th>
+      <th>user email</th>
+      <th>user password</th>
+      <th>Delete User</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userList">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.password}}</td>
+
+      <td>
+        <a (click)="deleteUser(user.id)" class="btn btn-primary" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

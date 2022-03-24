@@ -1,0 +1,94 @@
+<h3>Registration Form</h3>
+
+<form class="ui form borderd" [formGroup]="loginForm" autocomplete="off" id="loginForm">
+
+  <div class="form-wrapper">
+    <label for="name">Name:</label>
+    <div class="form-holder">
+      <i class="zmdi zmdi-account-o"></i>
+      <input formControlName="name" type="text" name="name" placeholder="Enter Name" class="form-control">
+      <div class="alert alert-danger"
+        *ngIf="loginForm.controls.name.touched && loginForm.controls['name'].errors && loginForm.controls['name'].errors.required">
+        Name is required</div>
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <label for="email">Email:</label>
+    <div class="form-holder">
+      <i class="zmdi zmdi-account-o"></i>
+      <input formControlName="email" type="text" name="email" placeholder="Enter Email" class="form-control">
+      <div class="alert alert-danger"
+        *ngIf="loginForm.controls.email.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.required">
+        Email is required</div>
+        <div class="alert alert-danger"
+        *ngIf="loginForm.controls.email.touched && loginForm.controls['email'].errors && loginForm.controls['email'].errors.email">
+        Email is not valid</div>
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <label for="password">Password:</label>
+    <div class="form-holder">
+      <i class="zmdi zmdi-account-o"></i>
+      <input formControlName="password" type="password" name="password" placeholder="Enter Password"
+        class="form-control">
+      <div class="alert alert-danger"
+        *ngIf="loginForm.controls.password.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.required">
+        Password is required</div>
+        <div class="alert alert-danger"
+        *ngIf="loginForm.controls.password.touched && loginForm.controls['password'].errors && loginForm.controls['password'].errors.minlength">
+        Password should have min length of 8</div>
+    </div>
+  </div>
+
+  <div class="form-wrapper">
+    <label for="confirmPassword">Confirm Password:</label>
+    <div class="form-holder">
+      <i class="zmdi zmdi-account-o"></i>
+      <input formControlName="confirmPassword" type="password" name="confirmPassword"
+        placeholder="Enter Confirm Password" class="form-control">
+      <div class="alert alert-danger"
+        *ngIf="loginForm.controls.confirmPassword.touched && loginForm.controls['confirmPassword'].errors && loginForm.controls['confirmPassword'].errors.validatePasswordConfirmation">
+        Confirm password does not match with password</div> &nbsp;
+    </div>
+  </div>
+</form>
+
+
+<!-- <div class="form-group">
+<div class="form-wrapper">
+<label for="">Country:</label>
+<div class="form-holder select">
+<select name="" id="" class="form-control">
+<option value="united states">United States</option>
+<option value="united kingdom">United Kingdom</option>
+<option value="India">India</option>
+</select>
+<i class="zmdi zmdi-pin"></i>
+</div>
+</div>
+<div class="form-wrapper">
+<label for="">Gender:</label>
+<div class="form-holder select">
+<select name="" id="" class="form-control">
+<option value="male">Male</option>
+<option value="femal">Female</option>
+<option value="other">Other</option>
+</select>
+<i class="zmdi zmdi-face"></i>
+</div>
+</div>
+</div> -->
+<div class="form-end">
+  <!-- <div class="checkbox">
+    <label>
+      <input type="checkbox">
+      <span class="checkmark"></span>
+    </label>
+  </div> -->
+  <div class="button-holder">
+    <button type="submit" [disabled]="disableSubmitBtn" class="btn btn-primary" (click)="addUsers()"  routerLink="/users">Register Now</button> |
+    <a routerLink='/signin' class='btn btn-danger'>Login</a>
+  </div>
+</div>

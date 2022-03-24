@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="navbar-brand align-item-center d-flex">
+      <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
+      </i>
+        <a class="navbar-brand" href="#!">kitchen Story</a>
+
+
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search items">
+        </div>
+        <span class="fas fa-search search-icon"></span>
+
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item"><a class="nav-link active" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a></li>
+                <!-- <li class="nav-item"><a class="nav-link"  routerLink="/users" routerLinkActive="active">Users</a></li>
+                <li class="nav-item"><a class="nav-link"  routerLink="/products" routerLinkActive="active">Products</a></li> -->
+                <li class="nav-item"><a class="nav-link"  routerLink="/login" routerLinkActive="active">Login</a></li>
+                <li class="nav-item"><a class="nav-link"  routerLink="/userproducts" routerLinkActive="active">Items</a></li>
+
+                <li class="nav-item"><a class="nav-link" routerLink="/admin"                routerLinkActive="active">Admin</a></li>
+
+
+            </ul>&nbsp;
+            <button routerLink="/cart" class="btn btn-secondary">
+              <i style="font-size: 20px;" class="fas fa-cart-plus"></i>
+              <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+            </button>
+
+        </div>
+
+
+    </div>
+
+</nav>

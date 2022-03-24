@@ -1,0 +1,95 @@
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <main class="auth">
+        <div class="container-fluid">
+            <div class="row vh-100">
+                <div class="col-md-6 text-center py-5 d-flex flex-column justify-content-center auth-bg-section text-white" style="background-image: url(api/images/kitchen.jpg)">
+                    <h1 class="text-reset">Welcome to <br> Login Page</h1>
+                    <p class="font-weight-bold text-reset">Plz login and enjoy our services</p>
+                </div>
+                <div class="col-md-6 text-center d-flex flex-column py-5 justify-content-center">
+                    <div class="auth-form-section">
+                        <div class="logo"><img src="api/images/Logo.gif" [width]="800" class="img-fluid" alt="Unplug UI" width="400"></div>
+
+
+                        <h2>Sign in</h2>
+                        <p>Free access to our dashboard</p>
+                        <form class="auth-form" [formGroup]="signInform" autocomplete="off" id="signInform">
+                            <div class="form-group">
+                                <label for="username" class="sr-only">Username</label>
+                                <input formControlName="email" type="text"  name="username"  class="form-control" placeholder="Enter Username">
+                                <span *ngIf="isValid('email')">Username Cannot be Blank</span>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="password" class="sr-only">Password</label>
+                            <input formControlName="password" type="password"  name="Password" class="form-control" placeholder="Enter Password">
+                            <span *ngIf="isValid('password')">Password Cannot be blank</span>
+                            </div><br>
+
+                       <button type="submit" class="btn btn-success btn-block mb-3" (click)="verifyUsers()" value="Submit Form" >Sign in</button>
+                            <div class="d-md-flex justify-content-between">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="termsAgriment" id="termsAgriment" value="termsAgreed">
+                                    <label class="form-check-label" for="termsAgriment">
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <a href="#" class="text-info">Forgot Password?</a>
+                            </div>
+
+                        </form>
+
+<!-- <script>
+  const form=document.getElementById('signin')
+  form.addEventListener('submit', signin)
+
+  async function signin(event){
+    event.preventDefault()
+    const username=document.getElementById('username').value
+    const userPassword=document.getElementById('userPassword').value
+
+    const result= await fetch('/api/signin',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+body: JSON.stringify({
+  username,
+  userpassword
+})
+ }).then((res) => res.json())
+ if(result.status=='ok'){
+   console.log('git the token: ' ,result.data )
+   alert('Success')
+ }else{
+   alert(result.error)
+ }
+  }
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- <h5 class="text-left mb-3">Sign in to Dribbble</h5> -->
+                        <p class="mb-0 d-flex">
+                            <!-- <a href="#" class="btn btn-light btn-block mr-2">Sign in with google</a> -->
+                            <a href="#" class="btn btn-facebook mr-2"> <i class="mdi mdi-facebook"></i></a>
+                            <a href="#" class="btn btn-twitter"><i class="mdi mdi-twitter"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>

@@ -1,0 +1,13 @@
+.card {
+  height: 60vh;
+  margin: 25px;
+  padding: 25px;
+}
+
+.center {
+  position: absolute;
+  top: 550px;
+  left: 850px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

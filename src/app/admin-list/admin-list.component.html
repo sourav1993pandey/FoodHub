@@ -1,0 +1,29 @@
+
+<br><br>
+<h3>Admin List</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>admin id</th>
+      <th>admin Name</th>
+      <th>admin email</th>
+      <th>admin password</th>
+      <th>Delete Admin</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let admin of adminList">
+      <td>{{admin.id}}</td>
+      <td>{{admin.name}}</td>
+      <td>{{admin.email}}</td>
+      <td>{{admin.password}}</td>
+
+      <td>
+        <a (click)="deleteAdmin(admin.id)" class="btn btn-primary" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

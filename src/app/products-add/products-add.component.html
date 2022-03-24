@@ -1,0 +1,24 @@
+<form class="auth-form" [formGroup]="uploadProducts" autocomplete="off" id="uploadProducts">
+  <div class="form-group">
+    <input formControlName="name" type="text" name="name"  class="form-control"
+    placeholder="Enter Product name..">
+    <span *ngIf="isValid('name')"> Please enter Product</span>
+</div><br>
+
+<div class="form-group">
+  <input formControlName="price" type="text" name="price"  class="form-control"
+  placeholder="Enter Product Price..">
+  <span *ngIf="isValid('price')">Enter Product Price</span>
+</div><br>
+
+<input type="file" class="custom-file-input" id="customFile" name="uploadedImage"
+            (change)="onFileSelect($event)" #UploadFileInput>
+
+          <label class="custom-file-label" for="customFile">{{fileInputLabel || 'Choose File'}}</label>
+
+
+<input type="submit" (click)=addProducts() value="Add Product"   class="btn btn-success"> |
+<input type="reset" value="clear" class="btn btn-secondary"> |
+<a routerLink='/upload-file' class='btn btn-primary'>Upload Image</a>
+
+</form>

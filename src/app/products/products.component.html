@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+
+
+<a routerLink='/products-add' class='btn btn-danger'>Add New item</a>
+<br><br>
+<h3>Products List</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Product id</th>
+      <th>Product Image</th>
+      <th>Product Name</th>
+      <th>Product Price</th>
+      <th>Description</th>
+      <th>Delete Item</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList">
+      <td>{{product.id}}</td>
+      <td><img width="100" [src]="'api/images/' + product.image"></td>
+      <td>{{product.name}}</td>
+      <td>{{product.price}}</td>
+      <td>
+        <a [routerLink]="['/product-detail', product.id]" class="btn btn-primary" >View detail</a>
+      </td>
+      <td>
+        <a [routerLink]="['/delete', product.id]" class="btn btn-primary" >Delete</a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
